@@ -1,254 +1,189 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+:root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --text: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --accent: #0070c9;
+    --max-width: 1240px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f5f5f7;
+        --surface: #ffffff;
+        --text: #1d1d1f;
+        --text-secondary: #6e6e73;
+    }
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
 a {
-	color: inherit;
-}
-a:hover {
-  text-decoration: underline;
+    text-decoration: none;
 }
 
 body {
-	background: #fafafa;
-	padding-top: 64px;
-	-webkit-font-smoothing: antialiased;
-	overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header */
 header {
-	background: #fff;
-	width: 100%;
-	height: 64px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-	padding: 0 24px;
-	position: fixed;
-	top: 0;
-	z-index: 999;
-	display: flex;
-	justify-content: space-between;
-}
-header.footer {
-	display: block;
-	text-align: center;
-	position: relative;
-	border-bottom: none;
-	border-top: 1px solid rgba(0, 0, 0, 0.12);
-	background: none;
-}
-header h3 {
-	line-height: 64px;
-	font-size: 18px;
-	color: #333;
-	font-weight: 600;
-}
-header h3.balance {
-	color: #fff;
-}
-header .link {
-	color: #999;
-	font-size: 16px;
-	line-height: 64px;
-	margin: 0 12px;
-}
-header .link.active {
-	font-weight: 500;
-	color: #333;
+    background: var(--surface);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 { font-size: 22px; font-weight: 600; }
+
+header nav a {
+    color: var(--text-secondary);
+    margin-left: 40px;
+    font-size: 17px;
+}
+
+header nav a:hover {
+    color: var(--text);
+}
+
+/* Hero */
 #hero {
-	padding: 128px 0;
-	text-align: center;
-	width: 640px;
-	margin: 0 auto;
+    padding: 160px 0 120px;
+    text-align: center;
 }
-#hero .logo, .section .logo {
-	width: 80px;
-	margin-bottom: 24px;
-	box-shadow: inset 0px -0.25px 0.5px rgba(0, 0, 0, 0.08), inset 0px 0.25px 0.5px rgba(255, 255, 255, 0.16), 0px 1.5px 2px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.12);
-	border-radius: 19px;
+
+#hero .profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
-#hero .bundle-logo {
-	width: 251px;
-}
+
 #hero h2 {
-	font-size: 48px;
-	line-height: 56px;
-	font-weight: 600;
-	margin-bottom: 16px;
-}
-#hero p {
-	font-size: 22px;
-	line-height: 1.45455;
-	font-weight: 300;
-	letter-spacing: .016em;
-	color: #666;
-	margin-bottom: 24px;
-}
-.clear {
-	clear: both;
-}
-#hero a.link, .section .link {
-	color: #0070c9;
-	font-size: 20px;
-	line-height: 28px;
-	display: inline-block;
-	margin: 0 auto;
-}
-.section .text .link.button {
-	margin-top: 16px;
-}
-#hero a.link.button, .section .link.button {
-	background: #0070c9;
-	color: #fff;
-	padding: 12px 24px;
-	border-radius: 32px;
-	margin-bottom: 24px;
-	font-weight: 600;
-}
-#hero #iphone {
-	margin-left: 112px;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12px;
 }
 
-.iphone-wrapper {
-	width: 348px;
-	height: 692px;
-	position: relative;
-}
-#iphone {
-	width: 522px;
-	height: 858px;
-	background-image: url(images/iphone.png);
-	background-size: cover;
-	position: relative;
-	position: absolute;
-	left: -36px;
-	top: -22px;
-}
-#iphone .screen {
-	width: 300px;
-	height: 650px;
-	position: absolute;
-	top: 41px;
-	left: 59px;
-	background-size: cover;
+.subtitle {
+    font-size: 26px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
 }
 
-.section {
-	width: 800px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 128px;
-}
-.section .text {
-	width: 360px;
-	position: relative;
-	z-index: 1;
-}
-.section .text h4 {
-	font-size: 40px;
-	line-height: 48px;
-	font-weight: 600;
-	margin-bottom: 8px;
-}
-.section .text p {
-	font-size: 22px;
-	line-height: 1.45455;
-	font-weight: 300;
-	letter-spacing: .016em;
-	color: #666;
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-
-@media screen and (max-width: 960px) {
-	#hero, .section {
-		width: 480px;
-	}
-	#hero {
-		padding: 88px 0;
-	}
-	.section {
-		flex-direction: column;
-	}
-	.section .text {
-		order: 2;
-		width: 100%;
-	}
-	.section .text h4 {
-		font-size: 32px;
-		line-height: 40px;
-	}
-	.section .text p {
-		font-size: 18px;
-		line-height: 24px;
-	}
-	.section .iphone-wrapper {
-		order: 1;
-		margin-bottom: 64px;
-	}
+.hero-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 20px;
+    font-weight: 600;
+    background: var(--accent);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 540px) {
-	header h3.balance {
-		display: none;
-	}
-	#hero, .section {
-		width: 100%;
-		padding: 48px;
-	}
-	#hero h2 {
-		font-size: 32px;
-		line-height: 40px;
-		margin-bottom: 16px;
-	}
-	#hero p {
-		font-size: 18px;
-		line-height: 24px;
-	}
-	.section .text h4 {
-		margin-bottom: 8px;
-	}
-	.iphone-wrapper {
-		width: 250px;
-		height: 498px;
-	}
-	#iphone {
-		width: 337px;
-		height: 617px;
-		top: -13px;
-    	left: -25px;
-	}
-	#iphone .screen {
-	    width: 217px;
-	    height: 470px;
-	    top: 28px;
-	    left: 42px;
-	}
-	.section .logo {
-		width: 64px;
-		margin-bottom: 12px;
-	}
-	header .link {
-		margin: 0 0 0 8px;
-	}
-	#hero a.link, .section .link {
-		font-size: 18px;
-		line-height: 24px;
-	}
+.hero-buttons .btn:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
 }
-@media screen and (max-width: 540px) {
-	#hero, .section {
-		padding: 48px 24px;
-	}
+
+/* Projects */
+.work-section .project {
+    padding: 120px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.screenshot-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.screenshot {
+    max-width: 780px;
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+    margin: 0 auto;
+}
+
+.info {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.app-icon {
+    width: 72px;
+    height: 72px;
+}
+
+.info h3 {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin: 24px 0 40px;
+}
+
+/* Footer */
+footer {
+    background: var(--surface);
+    padding: 30px 0 30px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container { padding: 0 24px; }
+    #hero h2 { font-size: 42px; }
+    .screenshot { max-width: 620px; border-radius: 20px; }
+    .info h3 { font-size: 36px; }
 }
