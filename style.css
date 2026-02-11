@@ -74,6 +74,29 @@ header nav a:hover {
     color: var(--text);
 }
 
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 24px;
+        text-align: center;
+    }
+    
+    header nav {
+        display: flex;
+        gap: 28px;
+        justify-content: center;
+    }
+    
+    header nav a {
+        font-size: 17px;
+    }
+    
+    header h1 {
+        font-size: 21px;
+    }
+}
+
 /* Hero */
 #hero {
     padding: 160px 0 120px;
