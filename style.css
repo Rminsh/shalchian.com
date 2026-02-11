@@ -5,6 +5,9 @@
     --text-secondary: #a1a1a6;
     --accent: #0070c9;
     --max-width: 1240px;
+    --status-bg: rgba(255,255,255,0.08);
+    --status-text: #aaaaaa;
+    --status-border: rgba(255,255,255,0.12);
 }
 
 @media (prefers-color-scheme: light) {
@@ -13,6 +16,9 @@
         --surface: #ffffff;
         --text: #1d1d1f;
         --text-secondary: #6e6e73;
+        --status-bg: rgba(0,0,0,0.06);
+        --status-text: #666666;
+        --status-border: rgba(0,0,0,0.12);
     }
 }
 
@@ -186,4 +192,24 @@ footer {
     #hero h2 { font-size: 42px; }
     .screenshot { max-width: 620px; border-radius: 20px; }
     .info h3 { font-size: 36px; }
+}
+
+/* Archived status */
+.status {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-left: 12px;
+    background: var(--status-bg);
+    color: var(--status-text);
+    border: 1px solid var(--status-border);
+}
+
+.note {
+    font-size: 15.5px;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
 }
